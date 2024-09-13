@@ -75,6 +75,12 @@ docs/_build/
 .pybuilder/
 target/
 
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
