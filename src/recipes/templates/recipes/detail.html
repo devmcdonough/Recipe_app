@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="detail-container">
+        <img src="{{ object.pic.url }}" alt="{{ object.name }}" class="detail-image">
+        <div class="detail-info">
+            <h1>{{ object.name }}</h1>
+            <p><b>Cooking Time: </b> {{ object.cooking_time }} minutes</p>
+            <p><b>Difficulty: </b> {{ object.difficulty }}</p>
+            <p><b>Ingredients: </b> {{ object.ingredients }}</p>
+        </div>
+    </div>
+</body>
+</html>

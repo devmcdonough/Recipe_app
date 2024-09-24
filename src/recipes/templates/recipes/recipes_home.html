@@ -1,11 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes Home</title>
+    <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    Welcome to the recipes. We've got ingredients.
+    <h1 class="page-title">Recipes</h1>
+    <div class="recipe-grid">
+        {% for object in object_list %}
+        <div class="recipe-item">
+            <a href="{{ object.get_absolute_url }}">
+                <img src="{{ object.pic.url }}" class="recipe-image" alt="{{ object.name }}">
+                <div class="recipe-title">{{ object.name }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
