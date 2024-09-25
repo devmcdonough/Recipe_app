@@ -1,9 +1,11 @@
 from django.db import models
 from django.shortcuts import reverse
+# To protect class based view
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your models here.
-class Recipe(models.Model):
+class Recipe(models.Model, LoginRequiredMixin):
     name = models.CharField(max_length=120)
     cooking_time = models.PositiveBigIntegerField(help_text="Time in minutes")
     ingredients = models.TextField(help_text="List ingredients and separate with commas")

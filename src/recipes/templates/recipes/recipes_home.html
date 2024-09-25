@@ -9,7 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="page-title">Recipes</h1>
+    <div class="header">
+        <h1 class="page-title">Recipes</h1>
+        <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+    </div>
     <div class="recipe-grid">
         {% for object in object_list %}
         <div class="recipe-item">

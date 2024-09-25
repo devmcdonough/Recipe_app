@@ -2,6 +2,27 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+/* Body for the login page only */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+/* Body for the detail page only */
+.detail-body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .detail-container {
@@ -44,5 +65,143 @@ body {
 
     .detail-info {
         text-align: left;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;  /* Space between title and logout */
+    align-items: center;
+    max-width: 1200px;  /* Same width as your grid */
+    margin: 0 auto;  /* Center the header */
+    padding: 20px;  /* Padding around the header */
+    position: relative;
+}
+
+.page-title {
+    margin: 0;  /* This removes all margins */
+    font-size: 2em;  /* Set the desired font size */
+    font-weight: bold;  /* Ensure bold styling */
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+    gap: 20px;  /* Space between items */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+.recipe-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.logout-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    color: #4a4a4a;
+    text-decoration: none;
+}
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the container that holds the login form */
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%; /* Ensure responsiveness */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Style the login heading */
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Style the form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensure fields are centered */
+}
+
+/* Style for form fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Style for the button */
+.login-form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.messages p {
+    background-color: #007BFF;
+    color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;  /* 1 column for small screens */
     }
 }
