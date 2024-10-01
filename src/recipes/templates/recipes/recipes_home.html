@@ -13,15 +13,49 @@
         <h1 class="page-title">Recipes</h1>
         <a href="{% url 'logout' %}" class="logout-link">Logout</a>
     </div>
-    <div class="recipe-grid">
-        {% for object in object_list %}
-        <div class="recipe-item">
-            <a href="{{ object.get_absolute_url }}">
-                <img src="{{ object.pic.url }}" class="recipe-image" alt="{{ object.name }}">
-                <div class="recipe-title">{{ object.name }}</div>
-            </a>
-        </div>
-        {% endfor %}
+
+    <div class="search-form">
+        <form method="GET">
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+        <a href="{% url 'recipes:list' %}">Clear filters</a>
     </div>
+
+    <!-- Display recipe grid by default -->
+     {% if not request.GET %}
+    <div class="recipe-grid">
+        {% if object_list %}
+            {% for object in object_list %}
+            <div class="recipe-item">
+                <a href="{{ object.get_absolute_url }}">
+                    <img src="{{ object.pic.url }}" class="recipe-image" alt="{{ object.name }}">
+                    <div class="recipe-title">{{ object.name }}</div>
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            {% if request.GET %}
+                <p>No recipes found</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    {% else %}
+    <div class="recipe-results">
+        {% if recipe_df %}
+            {{ recipe_df|safe }}
+        {% else %}
+            <p>No recipes found</p>
+        {% endif %}
+    </div>
+
+    <div class="chart-section">
+        {% if chart %}
+            <h2>Chart</h2>
+            <img src="data:image/png;base64, {{ chart|safe }}">
+        {% endif %}
+    </div>
+    {% endif %}
 </body>
 </html>

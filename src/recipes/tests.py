@@ -2,6 +2,7 @@ from django.test import TestCase
 from .models import Recipe
 from django.urls import reverse, resolve
 from recipes.views import RecipeDetailView, RecipeListView
+from recipes.forms import RecipeSearchForm
 
 # Create your tests here.
 class RecipeModelTest(TestCase):
@@ -93,3 +94,27 @@ class RecipeModelTests(TestCase):
     def test_get_absolute_url(self):
         self.assertEqual(self.recipe.get_absolute_url(), reverse('recipes:detail', kwargs={'pk': self.recipe.pk}))
 
+class RecipeFormTest(TestCase):
+     
+    def test_recipe_search_form_valid_data(self):
+         form = RecipeSearchForm(data={
+             'recipe_name': 'Pancakes',
+             'ingredients': 'flour, eggs, milk',
+             'difficulty': 'easy',
+             'chart_type': '#1'
+         })
+         self.assertTrue(form.is_valid())
+
+    def test_recipe_search_form_empty_data(self):
+        form = RecipeSearchForm(data={})
+        self.assertTrue(form.is_valid())
+     
+    def test_recipe_search_form_invalid_difficulty(self):
+        form = RecipeSearchForm(data={
+            'recipe_name': 'Pancakes',
+            'ingredients': 'flour, eggs, milk',
+            'difficulty': 'invalid_choice'
+        })
+        self.assertFalse(form.is_valid())
+        self.assertIn('difficulty', form.errors)
+    
