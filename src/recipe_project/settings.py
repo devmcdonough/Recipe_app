@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'src.recipe_project.urls'
+ROOT_URLCONF = 'recipe_project.urls'
 
 TEMPLATES = [
     {
@@ -72,18 +73,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.recipe_project.wsgi.application'
+WSGI_APPLICATION = 'recipe_project.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
     }
-}
 
 
 # Password validation
@@ -117,13 +115,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[
-    BASE_DIR / 'recipes/static'
-]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -150,10 +141,7 @@ DEBUG = False
 # Add your domain(s) to ALLOWED_HOSTS
 ALLOWED_HOSTS = ['your-domain.com', 'your-heroku-app.herokuapp.com']
 
-# Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
