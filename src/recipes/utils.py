@@ -1,5 +1,5 @@
 from collections import Counter
-from recipes.models import Recipe
+from src.recipes.models import Recipe
 from io import BytesIO
 import base64
 import matplotlib.pyplot as plt
