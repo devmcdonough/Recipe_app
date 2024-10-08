@@ -28,7 +28,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='fallback-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pure-atoll-83873-2840d2760a7b.herokuapp.com']
 
 
 # Application definition
