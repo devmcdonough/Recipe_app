@@ -28,7 +28,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='fallback-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pure-atoll-83873-2840d2760a7b.herokuapp.com']
+ALLOWED_HOSTS = ['pure-atoll-83873-2840d2760a7b.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # recipe related apps
-    'src.recipes'
+    'recipes'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'src.recipe_project.urls'
+ROOT_URLCONF = 'recipe_project.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.recipe_project.wsgi.application'
+WSGI_APPLICATION = 'recipe_project.wsgi.application'
 
 
 # Database
@@ -138,17 +138,13 @@ CSRF_COOKIE_SECURE = True  # Ensures CSRF cookies are only sent over HTTPS
 # Set DEBUG to False for production
 DEBUG = False
 
-# Add your domain(s) to ALLOWED_HOSTS
-ALLOWED_HOSTS = ['your-domain.com', 'your-heroku-app.herokuapp.com']
-
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
-   BASE_DIR / 'static'
+   BASE_DIR / 'recipes' / 'static',
 ]
+
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
