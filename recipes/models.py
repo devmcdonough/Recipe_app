@@ -9,7 +9,7 @@ class Recipe(models.Model, LoginRequiredMixin):
     name = models.CharField(max_length=120)
     cooking_time = models.PositiveBigIntegerField(help_text="Time in minutes")
     ingredients = models.TextField(help_text="List ingredients and separate with commas")
-    pic = models.ImageField(upload_to='recipes', default='no_picture.png')
+    pic = models.ImageField(default='no_picture.png')
 
 
     def difficulty(self):
