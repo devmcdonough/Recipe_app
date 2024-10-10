@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: red;
+    background-color: #f9f9f9;
     box-sizing: border-box;
 }
 
@@ -194,26 +194,32 @@ input[type="text"], input[type="password"] {
 }
 
 nav {
-    display: flex; /* Flex container */
-    justify-content: space-between; /* Spread the items across the container */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between left and right navs */
+    align-items: center; /* Vertically center items */
     padding: 1rem 2rem; /* Padding inside the nav */
     background: #cfd8dc; /* Background color */
-  }
-  
-  nav ul {
-    display: flex; /* Display the list items in a row */
-    list-style: none; /* Remove the bullet points */
-  }
-  
-  nav li {
+}
+
+.left-nav, .right-nav {
+    display: flex; /* Display list items in a row */
+    list-style: none; /* Remove bullet points */
+}
+
+.left-nav li, .right-nav li {
     padding-left: 1rem; /* Add space between list items */
-  }
-  
-  nav a {
+}
+
+.right-nav {
+    margin-left: auto; /* Push the right nav to the right */
+}
+
+nav a {
     text-decoration: none; /* Remove underline from links */
     color: black; /* Text color */
     font-weight: bold; /* Make the text bold */
-  }
+}
+
   
 
 /* .logout-link {
