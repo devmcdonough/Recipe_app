@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: red;
     box-sizing: border-box;
 }
 
@@ -192,6 +192,35 @@ input[type="text"], input[type="password"] {
     border-radius: 4px;
     margin-bottom: 12px;
 }
+
+nav {
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Spread the items across the container */
+    padding: 1rem 2rem; /* Padding inside the nav */
+    background: #cfd8dc; /* Background color */
+  }
+  
+  nav ul {
+    display: flex; /* Display the list items in a row */
+    list-style: none; /* Remove the bullet points */
+  }
+  
+  nav li {
+    padding-left: 1rem; /* Add space between list items */
+  }
+  
+  nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Text color */
+    font-weight: bold; /* Make the text bold */
+  }
+  
+
+/* .logout-link {
+    margin-left: auto;  /* Pushes the logout link to the right
+} */
+
+
 
 /* Responsive layout adjustments */
 @media (max-width: 768px) {

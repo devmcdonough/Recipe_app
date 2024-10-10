@@ -54,6 +54,7 @@ AWS_S3_REGION_NAME = 'us-east-1'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 # Static and Media files settings for S3
+
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
@@ -98,8 +99,12 @@ WSGI_APPLICATION = 'recipe_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
 
 
 # Password validation
@@ -132,9 +137,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-AWS_LOCATION = 'recipes'
+AWS_LOCATION = ''
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/recipes/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -148,12 +153,12 @@ LOGIN_URL = '/login/'
 SECURE_HSTS_SECONDS = 31536000  # Enforces HTTPS for one year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Optional but recommended
 SECURE_HSTS_PRELOAD = True  # Optional, adds your domain to browser preload list
-SECURE_SSL_REDIRECT = True  # Redirects all HTTP to HTTPS
+SECURE_SSL_REDIRECT = False  # Redirects all HTTP to HTTPS
 SESSION_COOKIE_SECURE = True  # Ensures cookies are only sent over HTTPS
 CSRF_COOKIE_SECURE = True  # Ensures CSRF cookies are only sent over HTTPS
 
 # Set DEBUG to False for production
-DEBUG = False
+DEBUG = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

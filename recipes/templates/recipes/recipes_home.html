@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes Home</title>
-    <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'recipes/css/styles.css?v=1.0' %}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="{% static 'recipes/js/home.js' %}"></script>
 </head>
 <body>
-    <div class="header">
-        <h1 class="page-title">Recipes</h1>
-        <a href="{% url 'logout' %}" class="logout-link">Logout</a>
-    </div>
-
+    {% include 'recipes/navbar.html' %}
     <div class="search-form">
         <form method="GET">
             {{ form.as_p }}
