@@ -111,12 +111,12 @@ body {
     text-decoration: none;
 }
 
-/* Ensure the form input fields, dropdowns, and button are in a row, while allowing wrapping */
+/* Ensure the form input fields, dropdowns, and button are in a row */
 .search-form form {
     display: flex;
     flex-wrap: wrap;           /* Allow wrapping if the screen size is small */
     gap: 10px;                 /* Space between form fields */
-    align-items: center;
+    align-items: flex-end;      /* Align form elements to the bottom of the row */
 }
 
 /* Style the form inputs, dropdowns, and button uniformly */
@@ -132,8 +132,10 @@ body {
     display: flex;
     flex-direction: column;    /* Stack label and form element vertically */
     align-items: flex-start;   /* Align label and input/field to the left */
+    flex: 1;                   /* Make sure form fields take up equal space */
 }
 
+/* Add a specific height to the label to prevent misalignment */
 .search-form form p label {
     margin-bottom: 5px;        /* Space between label and form element */
     font-weight: bold;         /* Bold the label for clarity */
@@ -160,6 +162,7 @@ body {
 .search-form a:hover {
     text-decoration: underline;
 }
+
 
 
 
