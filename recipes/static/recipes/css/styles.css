@@ -108,18 +108,10 @@ body {
 .recipe-title {
     font-size: 18px;
     margin-top: 10px;
+    text-decoration: none;
 }
 
-/* Style for the container that holds the form and the clear filter link */
-.search-form {
-    display: flex;             /* Use flexbox to align items horizontally */
-    justify-content: center;   /* Center the form and clear link */
-    align-items: center;       /* Vertically align the items */
-    gap: 10px;                 /* Add space between the form and the clear link */
-    margin: 20px 0;            /* Add margin above and below the search form */
-}
-
-/* Ensure the form input fields and button are in a row */
+/* Ensure the form input fields, dropdowns, and button are in a row, while allowing wrapping */
 .search-form form {
     display: flex;
     flex-wrap: wrap;           /* Allow wrapping if the screen size is small */
@@ -127,12 +119,33 @@ body {
     align-items: center;
 }
 
-/* Style the form inputs to look neat and uniform */
+/* Style the form inputs, dropdowns, and button uniformly */
 .search-form form input,
 .search-form form select,
 .search-form form button {
     padding: 5px 10px;
     font-size: 1em;
+}
+
+/* Ensure labels appear above the form elements */
+.search-form form p {
+    display: flex;
+    flex-direction: column;    /* Stack label and form element vertically */
+    align-items: flex-start;   /* Align label and input/field to the left */
+}
+
+.search-form form p label {
+    margin-bottom: 5px;        /* Space between label and form element */
+    font-weight: bold;         /* Bold the label for clarity */
+}
+
+/* Style for the form container */
+.search-form {
+    display: flex;             /* Use flexbox to align items horizontally */
+    justify-content: center;   /* Center the form and clear link */
+    align-items: center;       /* Vertically align the items */
+    gap: 10px;                 /* Add space between the form and the clear link */
+    margin: 20px 0;            /* Add margin above and below the search form */
 }
 
 /* Style for the clear filters link */
@@ -147,6 +160,7 @@ body {
 .search-form a:hover {
     text-decoration: underline;
 }
+
 
 
 .logout-link {
