@@ -115,41 +115,42 @@ body {
 .search-form {
     display: flex;
     justify-content: center;    /* Center the form and the clear link */
-    gap: 10px;
+    align-items: center;        /* Vertically align form elements */
+    gap: 10px;                  /* Space between form and the clear link */
     margin: 20px 0;
 }
 
-/* Keep form elements in a row on large screens */
+/* Form layout to keep elements on one line */
 .search-form form {
     display: flex;
-    flex-wrap: wrap;            /* Allow wrapping on smaller screens */
-    gap: 20px;                  /* Space between form elements */
-    align-items: flex-start;    /* Align form elements to the top of the row */
+    flex-wrap: wrap;            /* Allow wrapping if the screen size is small */
+    gap: 10px;                  /* Space between form elements */
+    align-items: center;        /* Align form fields vertically to the center */
 }
 
-/* Ensure each label and input/dropdown is stacked vertically */
+/* Ensure labels appear above inputs/dropdowns */
 .search-form form .form-group {
     display: flex;
     flex-direction: column;     /* Stack label on top of input/dropdown */
-    flex: 1;                    /* Make sure form elements take up equal space */
-    min-width: 200px;           /* Set minimum width to keep them consistent */
+    flex: 1;                    /* Let form elements take up equal space */
+    min-width: 150px;           /* Ensures dropdowns and inputs are wide enough */
 }
 
 /* Style the form labels */
 .search-form form label {
-    margin-bottom: 5px;         /* Add space between label and input/dropdown */
     font-weight: bold;
-    text-align: left;           /* Ensure the label is aligned to the left */
+    margin-bottom: 5px;         /* Space between the label and input/dropdown */
+    text-align: left;           /* Align labels to the left */
 }
 
-/* Ensure all inputs, dropdowns, and buttons have the same height */
+/* Uniform height for inputs, dropdowns, and buttons */
 .search-form form input,
 .search-form form select,
 .search-form form button {
-    height: 40px;               /* Set a uniform height for inputs, dropdowns, and buttons */
+    height: 40px;               /* Set the same height for inputs, dropdowns, and buttons */
     padding: 5px 10px;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 5px;         /* Optional, for consistency */
     border: 1px solid #ccc;     /* Add a border to inputs and dropdowns */
 }
 
@@ -185,7 +186,6 @@ body {
         flex-direction: column;  /* Stack form fields vertically on small screens */
     }
 }
-
 
 
 
