@@ -280,6 +280,7 @@ nav {
     align-items: center; /* Vertically center items */
     padding: 1rem 2rem; /* Padding inside the nav */
     background: #f9f9f9; /* Background color */
+    border-bottom: 1px solid #FDD365;;
 }
 
 .left-nav, .right-nav {
