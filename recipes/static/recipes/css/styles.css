@@ -114,48 +114,76 @@ body {
 /* Container for the search form */
 .search-form {
     display: flex;
-    justify-content: center;    /* Center the form and clear link */
-    align-items: center;        /* Vertically align the items */
-    gap: 10px;                  /* Add space between form and the clear link */
-    margin: 20px 0;             /* Add margin above and below the search form */
+    justify-content: center;    /* Center the form and the clear link */
+    align-items: center;        /* Vertically align form elements */
+    gap: 10px;                  /* Space between form and the clear link */
+    margin: 20px 0;
 }
 
-/* Style the form itself */
+/* Form layout to keep elements on one line */
 .search-form form {
-    display: grid;
-    grid-template-columns: auto 1fr auto;  /* Label, input, button */
-    gap: 10px;                            /* Space between form elements */
-    align-items: center;                  /* Align all elements vertically */
+    display: flex;
+    flex-wrap: wrap;            /* Allow wrapping if the screen size is small */
+    gap: 10px;                  /* Space between form elements */
+    align-items: center;        /* Align form fields vertically to the center */
 }
 
-/* Apply uniform styling to form labels */
+/* Ensure labels appear above inputs/dropdowns */
+.search-form form .form-group {
+    display: flex;
+    flex-direction: column;    /* Stack label on top of input/dropdown */
+    flex: 1;                   /* Let form elements take up equal space */
+}
+
+/* Style the form labels */
 .search-form form label {
-    font-weight: bold;                     /* Make the label bold for clarity */
+    font-weight: bold;
+    margin-bottom: 5px;        /* Space between the label and input/dropdown */
+}
+
+/* Uniform height for inputs, dropdowns, and buttons */
+.search-form form input,
+.search-form form select,
+.search-form form button {
+    height: 40px;              /* Set the same height */
+    padding: 5px 10px;
+    font-size: 1em;
+    border-radius: 5px;        /* Optional, for consistency */
 }
 
 /* Style for the submit button */
 .search-form button {
-    padding: 5px 15px;
-    font-size: 1em;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+.search-form button:hover {
+    background-color: #0056b3;
 }
 
 /* Style for the clear filters link */
 .search-form a {
     text-decoration: none;
-    color: #007BFF;             /* Blue color for the link */
-    font-weight: bold;          /* Bold the link */
-    padding: 5px 10px;          /* Add some padding to make it look like a button */
+    color: #007BFF;
+    font-weight: bold;
+    padding: 5px 10px;
 }
 
-/* Add hover effect for the clear filters link */
+/* Hover effect for the clear filters link */
 .search-form a:hover {
     text-decoration: underline;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .search-form form {
+        flex-direction: column;  /* Stack form fields vertically on small screens */
+    }
+}
+
 
 .logout-link {
     position: absolute;
