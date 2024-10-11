@@ -120,54 +120,27 @@ body {
     margin: 20px 0;             /* Add margin above and below the search form */
 }
 
-/* Form inside the search-form */
+/* Style the form itself */
 .search-form form {
-    display: flex;
-    flex-wrap: wrap;            /* Allow wrapping if the screen size is small */
-    gap: 10px;                  /* Space between form fields */
-    align-items: center;        /* Vertically align form elements */
+    display: grid;
+    grid-template-columns: auto 1fr auto;  /* Label, input, button */
+    gap: 10px;                            /* Space between form elements */
+    align-items: center;                  /* Align all elements vertically */
 }
 
-/* Label and form element alignment inside each form row */
-.search-form form .form-row {
-    display: flex;
-    flex-direction: row;        /* Align label and input horizontally */
-    align-items: center;        /* Vertically align label and input */
+/* Apply uniform styling to form labels */
+.search-form form label {
+    font-weight: bold;                     /* Make the label bold for clarity */
 }
 
-/* Form labels styling */
-.search-form form .form-row label {
-    font-weight: bold;          /* Make the label bold for clarity */
-    margin-right: 10px;         /* Add space between the label and input */
-    width: 120px;               /* Set a fixed width for labels */
-}
-
-/* Ensure uniform padding and spacing for input fields */
-.search-form form input,
-.search-form form select {
-    padding: 5px 10px;
-    font-size: 1em;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .search-form form {
-        flex-direction: column; /* Stack form elements vertically on smaller screens */
-    }
-
-    .search-form form .form-row label {
-        width: auto;            /* Allow labels to resize naturally */
-        margin-right: 0;        /* Remove right margin for vertical stacking */
-    }
-}
-
-/* Style for the search button */
+/* Style for the submit button */
 .search-form button {
     padding: 5px 15px;
     font-size: 1em;
     background-color: #007BFF;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -183,10 +156,6 @@ body {
 .search-form a:hover {
     text-decoration: underline;
 }
-
-
-
-
 
 .logout-link {
     position: absolute;
