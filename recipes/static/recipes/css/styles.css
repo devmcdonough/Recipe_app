@@ -115,42 +115,33 @@ body {
 .search-form {
     display: flex;
     justify-content: center;    /* Center the form and the clear link */
-    align-items: center;        /* Vertically align form elements */
-    gap: 10px;                  /* Space between form and the clear link */
+    gap: 10px;
     margin: 20px 0;
 }
 
-/* Form layout to keep elements on one line */
-.search-form form {
+/* Ensure that form rows stack labels on top of inputs/dropdowns */
+.search-form form .form-row {
     display: flex;
-    flex-wrap: wrap;            /* Allow wrapping if the screen size is small */
-    gap: 10px;                  /* Space between form elements */
-    align-items: center;        /* Align form fields vertically to the center */
-}
-
-/* Ensure labels appear above inputs/dropdowns */
-.search-form form .form-group {
-    display: flex;
-    flex-direction: column;     /* Stack label on top of input/dropdown */
-    flex: 1;                    /* Let form elements take up equal space */
-    min-width: 150px;           /* Ensures dropdowns and inputs are wide enough */
+    flex-direction: column;     /* Stack label and input/dropdown vertically */
+    flex: 1;                    /* Ensure all form groups take equal space */
+    min-width: 200px;           /* Set a reasonable min-width for inputs and dropdowns */
 }
 
 /* Style the form labels */
 .search-form form label {
-    font-weight: bold;
-    margin-bottom: 5px;         /* Space between the label and input/dropdown */
-    text-align: left;           /* Align labels to the left */
+    margin-bottom: 5px;         /* Space between label and input/dropdown */
+    font-weight: bold;          /* Make labels bold for clarity */
+    text-align: left;           /* Align all labels to the left */
 }
 
-/* Uniform height for inputs, dropdowns, and buttons */
+/* Ensure all inputs, dropdowns, and buttons have the same height */
 .search-form form input,
 .search-form form select,
 .search-form form button {
-    height: 40px;               /* Set the same height for inputs, dropdowns, and buttons */
+    height: 40px;               /* Set a uniform height for inputs, dropdowns, and buttons */
     padding: 5px 10px;
     font-size: 1em;
-    border-radius: 5px;         /* Optional, for consistency */
+    border-radius: 5px;
     border: 1px solid #ccc;     /* Add a border to inputs and dropdowns */
 }
 
@@ -180,14 +171,12 @@ body {
     text-decoration: underline;
 }
 
-/* Mobile adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .search-form form {
-        flex-direction: column;  /* Stack form fields vertically on small screens */
+        flex-direction: column;  /* Stack form fields vertically on smaller screens */
     }
 }
-
-
 
 .logout-link {
     position: absolute;
@@ -277,7 +266,7 @@ nav {
     justify-content: space-between; /* Space between left and right navs */
     align-items: center; /* Vertically center items */
     padding: 1rem 2rem; /* Padding inside the nav */
-    background: #cfd8dc; /* Background color */
+    background: #f9f9f9; /* Background color */
 }
 
 .left-nav, .right-nav {
