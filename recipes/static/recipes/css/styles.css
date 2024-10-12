@@ -272,10 +272,10 @@ input[type="text"], input[type="password"] {
     margin-bottom: 12px;
 }
 
-/* Navigation */
+/* Style for the navigation bar */
 nav {
     height: 80px;                      /* Set the height of the navigation */
-    background-color: #f9f9f9;  /* Your desired background color */
+    background-color: #f9f9f9;         /* Your desired background color */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -286,10 +286,16 @@ nav {
     z-index: 1000;
 }
 
-/* Style the logo to fit the navigation */
+/* Adjust the logo to fit within the nav */
 .nav-logo {
-    height: 48px;                      /* Adjust the logo height to fit the nav */
-    width: auto;                       /* Keep aspect ratio of the logo */
+    max-height: 48px;                  /* Restrict the height of the logo */
+    width: auto;                       /* Maintain the aspect ratio */
+}
+
+/* Remove any extra padding or margin around the logo's container */
+nav ul li {
+    margin: 0 15px;
+    padding: 0;                        /* Remove padding to prevent excess space */
 }
 
 /* Align the right-side navigation items */
@@ -299,16 +305,13 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
 nav a {
     text-decoration: none;
     color: #AC7C02;
     font-weight: bold;
     padding: 10px 15px;
 }
+
 
 
   
