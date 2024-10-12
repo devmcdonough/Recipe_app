@@ -288,7 +288,7 @@ nav {
 
 /* Style the logo to fit the navigation */
 .nav-logo {
-    height: 60px;                      /* Adjust the logo height to fit the nav */
+    height: 48px;                      /* Adjust the logo height to fit the nav */
     width: auto;                       /* Keep aspect ratio of the logo */
 }
 
